@@ -1,0 +1,467 @@
+#V3.30.14.00-safe;_2019_07_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
+#_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
+#_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
+#_Start_time: Fri Feb 28 13:49:00 2020
+#_Number_of_datafiles: 2
+#C data file created using the SS_writedat function in the R package r4ss
+#C should work with SS version: 
+#C file write time: 2020-02-28 13:29:29
+#_observed data: 
+#V3.30.14.00-safe;_2019_07_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
+1 #_StartYr
+30 #_EndYr
+1 #_Nseas
+ 12 #_months/season
+2 #_Nsubseasons (even number, minimum is 2)
+1.00001 #_spawn_month
+-1 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+12 #_Nages=accumulator age, first age is always age 0
+1 #_Nareas
+2 #_Nfleets (including surveys)
+#_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
+#_fleet_area:  area the fleet/survey operates in 
+#_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
+#_catch_mult: 0=no; 1=yes
+#_rows are fleets
+#_fleet_type fishery_timing area catch_units need_catch_mult fleetname
+ 1 -1 1 1 0 FISHERY1  # 1
+ 3 1 1 2 0 SURVEY1  # 2
+#Bycatch_fleet_input_goes_next
+#a:  fleet index
+#b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
+#c:  1=Fmult scales with other fleets; 2=bycatch F constant at input value; 3=bycatch F from range of years
+#d:  F or first year of range
+#e:  last year of range
+#f:  not used
+# a   b   c   d   e   f 
+#_Catch data: yr, seas, fleet, catch, catch_se
+#_catch_se:  standard error of log(catch)
+#_NOTE:  catch data is ignored for survey fleets
+-999 1 1 0 0
+1 1 1 161.102 0.00999975
+2 1 1 469.184 0.00999975
+3 1 1 759.034 0.00999975
+4 1 1 991.158 0.00999975
+5 1 1 768.392 0.00999975
+6 1 1 1323.9 0.00999975
+7 1 1 1279.43 0.00999975
+8 1 1 2468.69 0.00999975
+9 1 1 1328.69 0.00999975
+10 1 1 1520.34 0.00999975
+11 1 1 1613.45 0.00999975
+12 1 1 1614.1 0.00999975
+13 1 1 1099.97 0.00999975
+14 1 1 1518.04 0.00999975
+15 1 1 1503.02 0.00999975
+16 1 1 1274.05 0.00999975
+17 1 1 2251.82 0.00999975
+18 1 1 1621.5 0.00999975
+19 1 1 1462.47 0.00999975
+20 1 1 1303.51 0.00999975
+21 1 1 1637.55 0.00999975
+22 1 1 1082.01 0.00999975
+23 1 1 1630.1 0.00999975
+24 1 1 1202.03 0.00999975
+25 1 1 1110.32 0.00999975
+26 1 1 973.123 0.00999975
+27 1 1 923.985 0.00999975
+28 1 1 1211.08 0.00999975
+29 1 1 869.121 0.00999975
+30 1 1 1273.8 0.00999975
+-9999 0 0 0 0
+#
+ #_CPUE_and_surveyabundance_observations
+#_Units:  0=numbers; 1=biomass; 2=F; >=30 for special types
+#_Errtype:  -1=normal; 0=lognormal; >0=T
+#_SD_Report: 0=no sdreport; 1=enable sdreport
+#_Fleet Units Errtype SD_Report
+1 1 0 0 # FISHERY1
+2 0 0 1 # SURVEY1
+#_yr month fleet obs stderr
+1 1 2 1.4587 0.198042 #_ SURVEY1
+2 1 2 1.70911 0.198042 #_ SURVEY1
+3 1 2 1.52093 0.198042 #_ SURVEY1
+4 1 2 1.08476 0.198042 #_ SURVEY1
+5 1 2 1.52902 0.198042 #_ SURVEY1
+6 1 2 1.55258 0.198042 #_ SURVEY1
+7 1 2 1.39302 0.198042 #_ SURVEY1
+8 1 2 1.19216 0.198042 #_ SURVEY1
+9 1 2 1.39674 0.198042 #_ SURVEY1
+10 1 2 1.34447 0.198042 #_ SURVEY1
+11 1 2 1.22242 0.198042 #_ SURVEY1
+12 1 2 1.34404 0.198042 #_ SURVEY1
+13 1 2 0.980906 0.198042 #_ SURVEY1
+14 1 2 0.988143 0.198042 #_ SURVEY1
+15 1 2 0.896442 0.198042 #_ SURVEY1
+16 1 2 1.07825 0.198042 #_ SURVEY1
+17 1 2 1.05501 0.198042 #_ SURVEY1
+18 1 2 0.853864 0.198042 #_ SURVEY1
+19 1 2 0.731754 0.198042 #_ SURVEY1
+20 1 2 0.664392 0.198042 #_ SURVEY1
+21 1 2 0.867618 0.198042 #_ SURVEY1
+22 1 2 0.560507 0.198042 #_ SURVEY1
+23 1 2 0.624992 0.198042 #_ SURVEY1
+24 1 2 0.581435 0.198042 #_ SURVEY1
+25 1 2 0.612118 0.198042 #_ SURVEY1
+26 1 2 0.452297 0.198042 #_ SURVEY1
+27 1 2 0.520907 0.198042 #_ SURVEY1
+28 1 2 0.474443 0.198042 #_ SURVEY1
+29 1 2 0.472045 0.198042 #_ SURVEY1
+30 1 2 0.583511 0.198042 #_ SURVEY1
+-9999 1 1 1 1 # terminator for survey observations 
+#
+0 #_N_fleets_with_discard
+#_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
+#_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
+# note, only have units and errtype for fleets with discard 
+#_Fleet units errtype
+# -9999 0 0 0.0 0.0 # terminator for discard data 
+#
+0 #_use meanbodysize_data (0/1)
+#_COND_0 #_DF_for_meanbodysize_T-distribution_like
+# note:  type=1 for mean length; type=2 for mean body weight 
+#_yr month fleet part type obs stderr
+#  -9999 0 0 0 0 0 0 # terminator for mean body size data 
+#
+# set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
+2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
+1 # binwidth for population size comp 
+10 # minimum size in the population (lower edge of first bin and size at age 0.00) 
+89 # maximum size in the population (lower edge of last bin) 
+0 # use length composition data (0/1)
+# see manual for format of length composition data 
+#
+12 #_N_age_bins
+ 1 2 3 4 5 6 7 8 9 10 11 12
+1 #_N_ageerror_definitions
+ -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0
+#_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
+#_addtocomp:  after accumulation of tails; this value added to all bins
+#_males and females treated as combined gender below this bin number 
+#_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
+#_Comp_Error:  0=multinomial, 1=dirichlet
+#_Comp_Error2:  parm number  for dirichlet
+#_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
+0 0.0001 1 0 0 0 1 #_fleet:1_FISHERY1
+0 0.0001 1 0 0 0 1 #_fleet:2_SURVEY1
+1 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
+# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
+# partition codes:  (0=combined; 1=discard; 2=retained
+#_yr month fleet sex part ageerr Lbin_lo Lbin_hi Nsamp datavector(female-male)
+ 1 1 1 0 0 1 -1 -1 200 0.08 0.115 0.13 0.125 0.085 0.1 0.075 0.045 0.025 0.045 0.02 0.155
+ 2 1 1 0 0 1 -1 -1 200 0.095 0.08 0.125 0.09 0.135 0.075 0.07 0.07 0.035 0.055 0.025 0.145
+ 3 1 1 0 0 1 -1 -1 200 0.05 0.15 0.13 0.115 0.075 0.05 0.09 0.035 0.05 0.08 0.005 0.17
+ 4 1 1 0 0 1 -1 -1 200 0.065 0.09 0.16 0.145 0.145 0.075 0.07 0.03 0.045 0.03 0.04 0.105
+ 5 1 1 0 0 1 -1 -1 200 0.085 0.095 0.115 0.14 0.085 0.085 0.08 0.075 0.045 0.035 0.025 0.135
+ 6 1 1 0 0 1 -1 -1 200 0.075 0.16 0.12 0.115 0.125 0.1 0.06 0.035 0.04 0.045 0.03 0.095
+ 7 1 1 0 0 1 -1 -1 200 0.045 0.155 0.155 0.115 0.07 0.095 0.095 0.02 0.05 0.065 0.035 0.1
+ 8 1 1 0 0 1 -1 -1 200 0.095 0.12 0.185 0.12 0.105 0.085 0.085 0.035 0.04 0.025 0.015 0.09
+ 9 1 1 0 0 1 -1 -1 200 0.1 0.145 0.12 0.08 0.135 0.055 0.09 0.065 0.04 0.045 0.015 0.11
+ 10 1 1 0 0 1 -1 -1 200 0.085 0.12 0.18 0.07 0.15 0.12 0.04 0.025 0.045 0.02 0.02 0.125
+ 11 1 1 0 0 1 -1 -1 200 0.12 0.08 0.145 0.13 0.115 0.095 0.11 0.035 0.035 0.035 0.025 0.075
+ 12 1 1 0 0 1 -1 -1 200 0.095 0.185 0.125 0.125 0.06 0.07 0.09 0.07 0.035 0.035 0.03 0.08
+ 13 1 1 0 0 1 -1 -1 200 0.1 0.125 0.17 0.16 0.115 0.095 0.025 0.055 0.04 0.005 0.02 0.09
+ 14 1 1 0 0 1 -1 -1 200 0.145 0.115 0.145 0.13 0.15 0.065 0.05 0.025 0.04 0.045 0.005 0.085
+ 15 1 1 0 0 1 -1 -1 200 0.085 0.145 0.165 0.14 0.1 0.095 0.065 0.06 0.055 0.03 0.015 0.045
+ 16 1 1 0 0 1 -1 -1 200 0.135 0.21 0.13 0.14 0.08 0.085 0.045 0.04 0.045 0.02 0.005 0.065
+ 17 1 1 0 0 1 -1 -1 200 0.115 0.15 0.175 0.175 0.115 0.05 0.085 0.035 0.015 0.02 0.02 0.045
+ 18 1 1 0 0 1 -1 -1 200 0.1 0.215 0.19 0.11 0.1 0.105 0.04 0.045 0.035 0.01 0.015 0.035
+ 19 1 1 0 0 1 -1 -1 200 0.125 0.11 0.175 0.13 0.145 0.095 0.055 0.045 0.05 0.015 0.01 0.045
+ 20 1 1 0 0 1 -1 -1 200 0.145 0.195 0.19 0.125 0.13 0.05 0.05 0.025 0.03 0.015 0.005 0.04
+ 21 1 1 0 0 1 -1 -1 200 0.2 0.105 0.18 0.125 0.095 0.095 0.06 0.02 0.015 0.01 0.03 0.065
+ 22 1 1 0 0 1 -1 -1 200 0.175 0.185 0.13 0.145 0.085 0.08 0.085 0.04 0.005 0.025 0.005 0.04
+ 23 1 1 0 0 1 -1 -1 200 0.135 0.2 0.22 0.1 0.08 0.065 0.07 0.065 0.02 0 0.015 0.03
+ 24 1 1 0 0 1 -1 -1 200 0.105 0.145 0.285 0.19 0.07 0.06 0.025 0.03 0.015 0.025 0.01 0.04
+ 25 1 1 0 0 1 -1 -1 200 0.18 0.205 0.17 0.16 0.12 0.06 0.02 0.02 0.01 0.01 0.005 0.04
+ 26 1 1 0 0 1 -1 -1 200 0.12 0.24 0.175 0.17 0.125 0.075 0.035 0.025 0.01 0.01 0.005 0.01
+ 27 1 1 0 0 1 -1 -1 200 0.145 0.195 0.235 0.11 0.155 0.06 0.055 0.015 0.005 0.01 0.005 0.01
+ 28 1 1 0 0 1 -1 -1 200 0.18 0.19 0.16 0.18 0.105 0.08 0.04 0.025 0.02 0.005 0.005 0.01
+ 29 1 1 0 0 1 -1 -1 200 0.195 0.235 0.17 0.11 0.175 0.04 0.015 0.035 0.015 0.005 0 0.005
+ 30 1 1 0 0 1 -1 -1 200 0.2 0.185 0.265 0.13 0.06 0.075 0.03 0.015 0.02 0.015 0 0.005
+ 1 1 2 0 0 1 -1 -1 200 0.08 0.205 0.15 0.11 0.11 0.055 0.05 0.06 0.025 0.035 0.025 0.095
+ 2 1 2 0 0 1 -1 -1 200 0.09 0.15 0.17 0.15 0.075 0.085 0.065 0.035 0.025 0.035 0.035 0.085
+ 3 1 2 0 0 1 -1 -1 200 0.045 0.15 0.1 0.115 0.115 0.085 0.025 0.045 0.075 0.055 0.04 0.15
+ 4 1 2 0 0 1 -1 -1 200 0.065 0.12 0.205 0.1 0.11 0.085 0.06 0.045 0.03 0.02 0.035 0.125
+ 5 1 2 0 0 1 -1 -1 200 0.115 0.155 0.09 0.165 0.07 0.055 0.09 0.05 0.04 0.045 0.02 0.105
+ 6 1 2 0 0 1 -1 -1 200 0.09 0.225 0.125 0.075 0.12 0.065 0.055 0.04 0.025 0.05 0.025 0.105
+ 7 1 2 0 0 1 -1 -1 200 0.065 0.21 0.19 0.075 0.055 0.085 0.055 0.065 0.055 0.025 0.035 0.085
+ 8 1 2 0 0 1 -1 -1 200 0.075 0.15 0.185 0.16 0.075 0.08 0.06 0.045 0.045 0.02 0.025 0.08
+ 9 1 2 0 0 1 -1 -1 200 0.06 0.155 0.125 0.18 0.12 0.055 0.065 0.06 0.02 0.025 0.025 0.11
+ 10 1 2 0 0 1 -1 -1 200 0.14 0.115 0.185 0.125 0.095 0.1 0.045 0.04 0.045 0.045 0.015 0.05
+ 11 1 2 0 0 1 -1 -1 200 0.07 0.2 0.145 0.18 0.095 0.07 0.07 0.02 0.025 0.03 0.02 0.075
+ 12 1 2 0 0 1 -1 -1 200 0.08 0.155 0.195 0.11 0.095 0.095 0.12 0.04 0.01 0.025 0.02 0.055
+ 13 1 2 0 0 1 -1 -1 200 0.11 0.135 0.18 0.165 0.07 0.08 0.04 0.06 0.025 0.05 0.01 0.075
+ 14 1 2 0 0 1 -1 -1 200 0.1 0.15 0.165 0.205 0.105 0.06 0.065 0.025 0.04 0.02 0.02 0.045
+ 15 1 2 0 0 1 -1 -1 200 0.105 0.17 0.22 0.1 0.085 0.095 0.07 0.06 0.02 0.01 0.015 0.05
+ 16 1 2 0 0 1 -1 -1 200 0.095 0.185 0.175 0.165 0.105 0.065 0.055 0.02 0.02 0.025 0.03 0.06
+ 17 1 2 0 0 1 -1 -1 200 0.085 0.175 0.215 0.145 0.105 0.06 0.075 0.035 0.015 0.02 0.03 0.04
+ 18 1 2 0 0 1 -1 -1 200 0.07 0.215 0.275 0.14 0.095 0.06 0.045 0.035 0.025 0.005 0.01 0.025
+ 19 1 2 0 0 1 -1 -1 200 0.095 0.2 0.2 0.235 0.045 0.07 0.045 0.02 0.02 0.025 0.02 0.025
+ 20 1 2 0 0 1 -1 -1 200 0.125 0.22 0.155 0.16 0.145 0.05 0.05 0.035 0.025 0.015 0 0.02
+ 21 1 2 0 0 1 -1 -1 200 0.17 0.17 0.23 0.085 0.135 0.05 0.06 0.035 0.025 0.015 0 0.025
+ 22 1 2 0 0 1 -1 -1 200 0.1 0.26 0.185 0.16 0.09 0.065 0.08 0.01 0.02 0.015 0 0.015
+ 23 1 2 0 0 1 -1 -1 200 0.135 0.205 0.25 0.17 0.07 0.045 0.01 0.02 0.045 0.01 0.01 0.03
+ 24 1 2 0 0 1 -1 -1 200 0.09 0.295 0.2 0.18 0.09 0.045 0.03 0.025 0.015 0.005 0.01 0.015
+ 25 1 2 0 0 1 -1 -1 200 0.13 0.22 0.21 0.13 0.14 0.04 0.04 0.03 0.005 0.01 0 0.045
+ 26 1 2 0 0 1 -1 -1 200 0.095 0.28 0.23 0.09 0.125 0.075 0.045 0.02 0 0.005 0.015 0.02
+ 27 1 2 0 0 1 -1 -1 200 0.155 0.14 0.26 0.145 0.115 0.07 0.05 0.015 0.01 0.01 0.015 0.015
+ 28 1 2 0 0 1 -1 -1 200 0.16 0.205 0.21 0.165 0.1 0.065 0.055 0.01 0.005 0.01 0 0.015
+ 29 1 2 0 0 1 -1 -1 200 0.17 0.25 0.155 0.13 0.14 0.045 0.02 0.03 0.015 0 0.015 0.03
+ 30 1 2 0 0 1 -1 -1 200 0.1 0.38 0.245 0.085 0.085 0.06 0.01 0.005 0.01 0.01 0.005 0.005
+-9999  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#
+0 #_Use_MeanSize-at-Age_obs (0/1)
+#
+0 #_N_environ_variables
+#Yr Variable Value
+#
+0 # N sizefreq methods to read 
+#
+0 # do tags (0/1)
+#
+0 #    morphcomp data(0/1) 
+#  Nobs, Nmorphs, mincomp
+#  yr, seas, type, partition, Nsamp, datavector_by_Nmorphs
+#
+0  #  Do dataread for selectivity priors(0/1)
+# Yr, Seas, Fleet,  Age/Size,  Bin,  selex_prior,  prior_sd
+# feature not yet implemented
+#
+999
+
+#_expected values with no error added 
+#V3.30.14.00-safe;_2019_07_19;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.0
+#Stock Synthesis (SS) is a work of the U.S. Government and is not subject to copyright protection in the United States.
+#Foreign copyrights may apply. See copyright.txt for more information.
+1 #_StartYr
+30 #_EndYr
+1 #_Nseas
+ 12 #_months/season
+2 #_Nsubseasons (even number, minimum is 2)
+1.00001 #_spawn_month
+-1 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+12 #_Nages=accumulator age, first age is always age 0
+1 #_Nareas
+2 #_Nfleets (including surveys)
+#_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=ignore 
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
+#_fleet_area:  area the fleet/survey operates in 
+#_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
+#_catch_mult: 0=no; 1=yes
+#_rows are fleets
+#_fleet_type fishery_timing area catch_units need_catch_mult fleetname
+ 1 -1 1 1 0 FISHERY1  # 1
+ 3 1 1 2 0 SURVEY1  # 2
+#Bycatch_fleet_input_goes_next
+#a:  fleet index
+#b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
+#c:  1=Fmult scales with other fleets; 2=bycatch F constant at input value; 3=bycatch F from range of years
+#d:  F or first year of range
+#e:  last year of range
+#f:  not used
+# a   b   c   d   e   f 
+#_catch:_columns_are_year,season,fleet,catch,catch_se
+#_Catch data: yr, seas, fleet, catch, catch_se
+-999 1 1 0 0
+1 1 1 161.103 0.00999975
+2 1 1 469.193 0.00999975
+3 1 1 759.097 0.00999975
+4 1 1 991.206 0.00999975
+5 1 1 768.403 0.00999975
+6 1 1 1323.87 0.00999975
+7 1 1 1279.4 0.00999975
+8 1 1 2468.23 0.00999975
+9 1 1 1328.64 0.00999975
+10 1 1 1520.18 0.00999975
+11 1 1 1613.37 0.00999975
+12 1 1 1614.23 0.00999975
+13 1 1 1099.99 0.00999975
+14 1 1 1518.03 0.00999975
+15 1 1 1502.94 0.00999975
+16 1 1 1274.02 0.00999975
+17 1 1 2251.87 0.00999975
+18 1 1 1621.3 0.00999975
+19 1 1 1462.25 0.00999975
+20 1 1 1303.2 0.00999975
+21 1 1 1637.28 0.00999975
+22 1 1 1082.1 0.00999975
+23 1 1 1630.24 0.00999975
+24 1 1 1202.18 0.00999975
+25 1 1 1110.53 0.00999975
+26 1 1 973.171 0.00999975
+27 1 1 924.086 0.00999975
+28 1 1 1211.16 0.00999975
+29 1 1 869.27 0.00999975
+30 1 1 1273.79 0.00999975
+-9999 0 0 0 0
+#
+#
+ #_CPUE_and_surveyabundance_observations
+#_Units:  0=numbers; 1=biomass; 2=F; >=30 for special types
+#_Errtype:  -1=normal; 0=lognormal; >0=T
+#_SD_Report: 0=no sdreport; 1=enable sdreport
+#_Fleet Units Errtype SD_Report
+1 1 0 0 # FISHERY1
+2 0 0 1 # SURVEY1
+#_year month index obs err
+1 1 2 1.48583 0.198042 #_orig_obs: 1.4587 SURVEY1
+2 1 2 1.5145 0.198042 #_orig_obs: 1.70911 SURVEY1
+3 1 2 1.51461 0.198042 #_orig_obs: 1.52093 SURVEY1
+4 1 2 1.45813 0.198042 #_orig_obs: 1.08476 SURVEY1
+5 1 2 1.42224 0.198042 #_orig_obs: 1.52902 SURVEY1
+6 1 2 1.45729 0.198042 #_orig_obs: 1.55258 SURVEY1
+7 1 2 1.42876 0.198042 #_orig_obs: 1.39302 SURVEY1
+8 1 2 1.37544 0.198042 #_orig_obs: 1.19216 SURVEY1
+9 1 2 1.23321 0.198042 #_orig_obs: 1.39674 SURVEY1
+10 1 2 1.18675 0.198042 #_orig_obs: 1.34447 SURVEY1
+11 1 2 1.14915 0.198042 #_orig_obs: 1.22242 SURVEY1
+12 1 2 1.09615 0.198042 #_orig_obs: 1.34404 SURVEY1
+13 1 2 1.03606 0.198042 #_orig_obs: 0.980906 SURVEY1
+14 1 2 1.02872 0.198042 #_orig_obs: 0.988143 SURVEY1
+15 1 2 0.991828 0.198042 #_orig_obs: 0.896442 SURVEY1
+16 1 2 0.971264 0.198042 #_orig_obs: 1.07825 SURVEY1
+17 1 2 0.970755 0.198042 #_orig_obs: 1.05501 SURVEY1
+18 1 2 0.850581 0.198042 #_orig_obs: 0.853864 SURVEY1
+19 1 2 0.772922 0.198042 #_orig_obs: 0.731754 SURVEY1
+20 1 2 0.714526 0.198042 #_orig_obs: 0.664392 SURVEY1
+21 1 2 0.695191 0.198042 #_orig_obs: 0.867618 SURVEY1
+22 1 2 0.665021 0.198042 #_orig_obs: 0.560507 SURVEY1
+23 1 2 0.669316 0.198042 #_orig_obs: 0.624992 SURVEY1
+24 1 2 0.590119 0.198042 #_orig_obs: 0.581435 SURVEY1
+25 1 2 0.56259 0.198042 #_orig_obs: 0.612118 SURVEY1
+26 1 2 0.541567 0.198042 #_orig_obs: 0.452297 SURVEY1
+27 1 2 0.513957 0.198042 #_orig_obs: 0.520907 SURVEY1
+28 1 2 0.509038 0.198042 #_orig_obs: 0.474443 SURVEY1
+29 1 2 0.504136 0.198042 #_orig_obs: 0.472045 SURVEY1
+30 1 2 0.533294 0.198042 #_orig_obs: 0.583511 SURVEY1
+-9999 1 1 1 1 # terminator for survey observations 
+#
+0 #_N_fleets_with_discard
+#_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
+#_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
+# note, only have units and errtype for fleets with discard 
+#_Fleet units errtype
+# -9999 0 0 0.0 0.0 # terminator for discard data 
+#
+0 #_use meanbodysize_data (0/1)
+#_COND_0 #_DF_for_meanbodysize_T-distribution_like
+# note:  type=1 for mean length; type=2 for mean body weight 
+#_yr month fleet part type obs stderr
+#  -9999 0 0 0 0 0 0 # terminator for mean body size data 
+#
+# set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
+2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
+1 # binwidth for population size comp 
+10 # minimum size in the population (lower edge of first bin and size at age 0.00) 
+89 # maximum size in the population (lower edge of last bin) 
+0 # use length composition data (0/1)
+# see manual for format of length composition data 
+#
+12 #_N_age_bins
+ 1 2 3 4 5 6 7 8 9 10 11 12
+1 #_N_ageerror_definitions
+ -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0
+#_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
+#_addtocomp:  after accumulation of tails; this value added to all bins
+#_males and females treated as combined gender below this bin number 
+#_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
+#_Comp_Error:  0=multinomial, 1=dirichlet
+#_Comp_Error2:  parm number  for dirichlet
+#_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
+0 0.0001 1 0 0 0 1 #_fleet:1_FISHERY1
+0 0.0001 1 0 0 0 1 #_fleet:2_SURVEY1
+1 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
+# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
+# partition codes:  (0=combined; 1=discard; 2=retained
+#_yr month fleet sex part ageerr Lbin_lo Lbin_hi Nsamp datavector(female-male)
+1  1 1  0 0 1 -1 -1 200  13.6246 22.487 25.0622 24.0799 20.7281 16.6079 14.0491 12.8803 8.57623 8.43472 6.14693 27.3229
+2  1 1  0 0 1 -1 -1 200  17.3196 20.2577 26.1912 23.9819 20.6472 16.9291 13.3074 11.1769 10.2177 6.79865 6.68388 26.4888
+3  1 1  0 0 1 -1 -1 200  12.0131 26.4388 24.1204 25.532 20.9059 17.128 13.7725 10.7476 9.00095 8.2213 5.4694 26.65
+4  1 1  0 0 1 -1 -1 200  12.5971 18.5875 31.7898 23.6654 22.3573 17.405 13.9794 11.1576 8.68178 7.26468 6.63302 25.8814
+5  1 1  0 0 1 -1 -1 200  19.3849 18.9702 21.7379 30.3062 20.1191 18.063 13.7832 10.9879 8.7443 6.79851 5.68716 25.4177
+6  1 1  0 0 1 -1 -1 200  18.4512 28.8552 21.8636 20.3965 25.3478 15.9914 14.0719 10.6579 8.47162 6.7364 5.23626 23.9203
+7  1 1  0 0 1 -1 -1 200  13.7006 28.0693 33.8257 20.7643 17.2145 20.2978 12.5444 10.9534 8.27125 6.56906 5.22223 22.5674
+8  1 1  0 0 1 -1 -1 200  17.2219 21.0167 32.8268 31.8252 17.3034 13.5932 15.6902 9.62136 8.37493 6.31897 5.01733 21.19
+9  1 1  0 0 1 -1 -1 200  15.0838 27.0096 25.0349 31.2487 26.6879 13.7125 10.5346 12.0567 7.37031 6.40926 4.83478 20.017
+10  1 1  0 0 1 -1 -1 200  18.9805 22.8378 31.2747 23.3471 25.811 20.8852 10.5071 8.00863 9.13585 5.58102 4.85179 18.7794
+11  1 1  0 0 1 -1 -1 200  19.8423 28.5728 26.1595 28.7301 18.9491 19.8238 15.6959 7.83438 5.95322 6.78341 4.14408 17.5114
+12  1 1  0 0 1 -1 -1 200  16.6717 30.2196 32.9906 24.1456 23.3827 14.5824 14.9211 11.717 5.83154 4.42787 5.04233 16.0674
+13  1 1  0 0 1 -1 -1 200  20.3404 24.8793 34.3132 29.9967 19.3698 17.7375 10.8219 10.9814 8.59583 4.27633 3.24682 15.4408
+14  1 1  0 0 1 -1 -1 200  20.2163 30.09 27.9984 30.9854 23.9454 14.6387 13.1185 7.94096 8.03175 6.28171 3.1264 13.6265
+15  1 1  0 0 1 -1 -1 200  21.0162 30.0373 33.7525 25.0177 24.3613 17.7831 10.6312 9.44726 5.7016 5.76054 4.50452 11.9867
+16  1 1  0 0 1 -1 -1 200  24.5255 30.3859 32.8151 29.3752 19.1557 17.6162 12.5735 7.45536 6.60338 3.98337 4.02262 11.4881
+17  1 1  0 0 1 -1 -1 200  21.6146 36.1377 33.3606 28.4729 22.3482 13.7478 12.3553 8.74397 5.16934 4.57428 2.7605 10.7149
+18  1 1  0 0 1 -1 -1 200  18.5646 33.2497 40.89 29.3735 21.744 16.0124 9.60646 8.55198 6.03138 3.5639 3.15274 9.25936
+19  1 1  0 0 1 -1 -1 200  23.1057 27.8159 36.9181 35.5929 22.2847 15.514 11.1515 6.63158 5.88295 4.14603 2.4512 8.50552
+20  1 1  0 0 1 -1 -1 200  21.7451 34.613 30.909 32.1869 27.0568 15.9349 10.8294 7.71509 4.57396 4.0536 2.85722 7.52492
+21  1 1  0 0 1 -1 -1 200  31.9487 31.0187 36.2677 25.2615 22.8766 18.0694 10.3856 6.99511 4.96724 2.94431 2.60885 6.6562
+22  1 1  0 0 1 -1 -1 200  29.0152 44.9229 31.9552 28.9542 17.4444 14.8011 11.3939 6.48836 4.35584 3.09143 1.83455 5.74276
+23  1 1  0 0 1 -1 -1 200  26.494 40.8053 46.0602 25.4308 19.9908 11.3077 9.35824 7.13806 4.05295 2.72008 1.93171 4.71019
+24  1 1  0 0 1 -1 -1 200  25.4321 38.7195 42.9224 37.0017 17.5218 12.8555 7.0781 5.7988 4.40693 2.50222 1.68093 4.08001
+25  1 1  0 0 1 -1 -1 200  34.1986 35.0614 38.7925 33.163 24.6736 10.9411 7.82215 4.26806 3.48455 2.64675 1.50547 3.4428
+26  1 1  0 0 1 -1 -1 200  24.241 48.4354 36.2116 30.9728 22.8811 15.9462 6.894 4.88288 2.65747 2.16831 1.64794 3.06116
+27  1 1  0 0 1 -1 -1 200  26.9016 34.1712 50.0055 29.0191 21.5048 14.8997 10.1251 4.33975 3.06434 1.66912 1.36256 2.9372
+28  1 1  0 0 1 -1 -1 200  36.4654 36.6797 33.7114 38.0127 19.0515 13.2247 8.9307 6.01241 2.57175 1.81609 0.992421 2.5312
+29  1 1  0 0 1 -1 -1 200  39.2014 47.6857 34.5232 24.2185 23.4037 10.9467 7.39475 4.94488 3.31839 1.42266 1.00673 1.93331
+30  1 1  0 0 1 -1 -1 200  33.3266 51.3963 44.7601 24.7784 14.9498 13.5057 6.15547 4.11945 2.74678 1.84387 0.795185 1.62232
+1  1 2  0 0 1 -1 -1 200  12.2155 29.5067 29.334 24.4091 19.5509 15.2133 12.7238 11.6167 7.72374 7.59204 5.53225 24.5821
+2  1 2  0 0 1 -1 -1 200  15.5032 26.5929 30.7322 24.4025 19.5612 15.5804 12.11 10.1295 9.24631 6.14952 6.04453 23.9477
+3  1 2  0 0 1 -1 -1 200  10.5864 34.2362 27.9723 25.7102 19.6129 15.6135 12.4153 9.64924 8.06929 7.36644 4.90041 23.8679
+4  1 2  0 0 1 -1 -1 200  11.1237 24.1596 37.0741 23.9914 21.1275 15.9853 12.6976 10.0937 7.8427 6.55927 5.98794 23.3572
+5  1 2  0 0 1 -1 -1 200  17.3429 24.9498 25.6163 31.019 19.1871 16.7391 12.6313 10.0288 7.96945 6.19306 5.17994 23.1431
+6  1 2  0 0 1 -1 -1 200  16.0955 37.1662 25.3387 20.5883 23.8718 14.6426 12.7446 9.6144 7.63137 6.06538 4.7142 21.5269
+7  1 2  0 0 1 -1 -1 200  11.7903 35.6685 38.6825 20.6827 15.999 18.3409 11.2122 9.75117 7.35314 5.83719 4.63997 20.0426
+8  1 2  0 0 1 -1 -1 200  14.5997 26.5941 37.7854 32.1267 16.3512 12.5059 14.2848 8.72682 7.5859 5.72116 4.54221 19.1761
+9  1 2  0 0 1 -1 -1 200  12.994 34.4385 28.7932 31.3515 25.0003 12.4935 9.4949 10.8235 6.6076 5.7432 4.33202 17.9278
+10  1 2  0 0 1 -1 -1 200  16.3278 29.1552 36.1094 23.5537 24.3323 19.1545 9.53439 7.23923 8.24604 5.03553 4.37701 16.935
+11  1 2  0 0 1 -1 -1 200  16.8953 36.1822 30.02 28.847 17.7904 18.111 14.1885 7.05548 5.35422 6.09739 3.72507 15.7333
+12  1 2  0 0 1 -1 -1 200  14.0081 37.8123 37.4599 24.0085 21.7484 13.2014 13.366 10.4558 5.19757 3.94497 4.49128 14.3058
+13  1 2  0 0 1 -1 -1 200  17.3981 31.5285 39.2613 29.9578 18.0676 16.0927 9.71366 9.81781 7.67439 3.81697 2.89801 13.773
+14  1 2  0 0 1 -1 -1 200  17.0211 37.7559 31.9032 30.9324 22.3657 13.3093 11.8025 7.11766 7.18888 5.62003 2.79763 12.1857
+15  1 2  0 0 1 -1 -1 200  17.5829 37.4947 38.3042 24.8914 22.6857 16.1215 9.53817 8.44376 5.08969 5.13962 4.01872 10.6897
+16  1 2  0 0 1 -1 -1 200  20.6163 38.0284 37.2573 29.2002 17.8105 15.9409 11.2586 6.6508 5.88268 3.54764 3.58191 10.2248
+17  1 2  0 0 1 -1 -1 200  17.3549 43.9258 37.3935 28.2354 20.8317 12.4978 11.1225 7.84398 4.63207 4.09712 2.47294 9.59216
+18  1 2  0 0 1 -1 -1 200  15.0142 40.4563 45.6043 28.8718 20.0535 14.3912 8.54803 7.58199 5.34076 3.15519 2.79095 8.19189
+19  1 2  0 0 1 -1 -1 200  18.9275 34.2723 41.6841 35.4118 20.8012 14.1117 10.0422 5.9507 5.27206 3.71427 2.19641 7.61578
+20  1 2  0 0 1 -1 -1 200  17.7669 42.5052 34.7556 31.8767 25.1342 14.4237 9.70419 6.8885 4.07927 3.61364 2.54729 6.70474
+21  1 2  0 0 1 -1 -1 200  25.7438 37.9821 41.1025 25.3865 21.6334 16.6714 9.49092 6.37061 4.5185 2.67779 2.37251 6.05005
+22  1 2  0 0 1 -1 -1 200  23.3924 54.4658 35.4934 28.3343 16.0153 13.2413 10.0912 5.7263 3.83983 2.72455 1.61752 5.058
+23  1 2  0 0 1 -1 -1 200  20.487 48.2878 50.7923 24.9744 18.5116 10.2251 8.38422 6.37392 3.61552 2.42611 1.72329 4.19866
+24  1 2  0 0 1 -1 -1 200  19.9783 46.1865 47.3536 36.1819 16.1199 11.5384 6.29282 5.13772 3.90005 2.21437 1.48807 3.60839
+25  1 2  0 0 1 -1 -1 200  27.3011 42.4838 43.4534 32.9158 23.0367 9.96592 7.05685 3.83781 3.12962 2.37652 1.35243 3.08999
+26  1 2  0 0 1 -1 -1 200  19.0424 57.5743 39.6743 30.0132 20.8388 14.1626 6.06438 4.28063 2.32779 1.89886 1.44351 2.67912
+27  1 2  0 0 1 -1 -1 200  21.3667 41.0372 55.3124 28.3756 19.7589 13.3492 8.98318 3.83778 2.70703 1.47485 1.2042 2.59296
+28  1 2  0 0 1 -1 -1 200  28.6789 44.2099 37.914 38.105 18.0148 12.2129 8.17201 5.48366 2.34372 1.65484 0.904973 2.30526
+29  1 2  0 0 1 -1 -1 200  31.1083 57.3667 38.3462 23.8179 21.6432 9.87477 6.60665 4.40292 2.95159 1.26608 0.896422 1.71934
+30  1 2  0 0 1 -1 -1 200  25.1414 59.8921 49.0396 24.312 13.8679 12.2465 5.53315 3.69167 2.45934 1.65089 0.713055 1.45249
+-9999  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#
+0 #_Use_MeanSize-at-Age_obs (0/1)
+#
+0 #_N_environ_variables
+#Yr Variable Value
+#
+0 # N sizefreq methods to read 
+#
+0 # do tags (0/1)
+#
+0 #    morphcomp data(0/1) 
+#  Nobs, Nmorphs, mincomp
+#  yr, seas, type, partition, Nsamp, datavector_by_Nmorphs
+#
+0  #  Do dataread for selectivity priors(0/1)
+# Yr, Seas, Fleet,  Age/Size,  Bin,  selex_prior,  prior_sd
+# feature not yet implemented
+#
+999
+
+ENDDATA
