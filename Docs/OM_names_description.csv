@@ -1,0 +1,106 @@
+"Table 1. Description and current values for index variables, structure parameters, state variables, derived variables, and stochastic deviation used in the operating model. The phase of estimated means the parameter is not fixed but estimable in the estimation process. ",,,
+Symbols,Description,Current Value,R output
+Index variables,,,
+ ,Years ,  and ,sim1$yr
+,,,
+ ,Ages , and ,par.sim1$ages
+,,,
+Structural parameters,,,
+ ,Asymptotic average length (mm),800,par.sim1$Linf
+ ,Growth coefficient (year-1),0.18,par.sim1$K
+ ,Mean length-at-age at zero age (year),-1.36,par.sim1$a0
+ ,Length-weight coefficient,2.50E-08,par.sim1$a.lw
+ ,Length-weight exponent,3,par.sim1$b.lw
+ ,Slope of maturity ogive,3,par.sim1$slope.mat
+ ,Age at 50% maturity,2.25,par.sim1$A50.mat
+ ,Natural mortality rate-at-age (year-1)a,0.2,par.sim1$M.age
+ ,Proportion of female-at-age,0.5,par.sim1$proportion.female
+ ,Virgin recruitment,"1,000,000",par.sim1$R0
+ ,Steepness ,0.75,par.sim1$h
+ ,Slope of selectivity for landings,1,par.sim1$slope.sel
+ ,Age-at-50% selection for landings,2,par.sim1$A50.sel
+ ,Slope of selectivity for survey,2,par.sim1$slope.sel.survey
+ ,Age-at-50% selection for survey,1.5,par.sim1$A50.sel.survey
+ ,Shape of the fully selected fishing mortality rate in year ,Linear increase with ,
+, , and ,
+,,,
+ ,Annual sample size for age composition of landings,200,par.sim1$n.L
+ ,Annual sample size for age composition of survey,200,par.sim1$n.survey
+State variables,,,
+ ,Annual recruitment in year ,,"sim1$N.age[,1]"
+,,,
+ ,Spawning biomass in year,,sim1$SSB
+, (mt),,
+ ,Abundance-at-age ,,sim1$N.age
+, in year,,
+,,,
+Table 1. Continued.,,,
+Symbols,Description,Current Value,R output
+ ,Abundance in year ,,sim1$abundance
+,,,
+ ,Biomass in year ,,sim1$biomass.mt
+,,,
+ ,Landings-at-age ,,sim1$L.age
+, in year ,,
+, in numbers,,
+ ,Landings in year y (mt),,sim1$L.mt
+ ,Survey abundance-at-age a in year y,,survey.sim1.age
+ ,Survey abundance (sum across ages) in year y ,,survey.sim1
+ ,Observed landings in year ,,dat.input$L.obs
+, (mt) with noise,,
+ ,Proportion-at-age ,,
+, in year ,,
+, for landings,,
+ ,Observed proportion-at-age ,,dat.input$L.age.obs
+, in year ,,
+, for landings,,
+ ,Observed survey abundance in year y with noise,,dat.input$survey.obs
+ ,Proportion-at-age ,,
+, in year ,,
+, for survey,,
+ ,Observed proportion-at-age ,,dat.input$survey.age.obs
+, in year ,,
+, for survey,,
+Derived variables,,,
+ ,Length-at-age ,,par.sim1$len
+, (mm),,
+ ,Weight-at-age ,,par.sim1$W.mt
+, (mt),,
+ ,Maturity-at-age ,,par.sim1$mat.age
+,,,
+ ,Unfished spawning biomass per recruit,,par.sim1$phi.0
+ ,Total mortality rate-at-age ,,
+, in year ,,
+,,,
+ ,Fully selected fishing mortality rate in year ,,sim1$F
+, (year-1),,
+ ,Selectivity-at-age,,par.sim1$selex
+, for landings,,
+ ,Selectivity-at-age ,,par.sim1$selex.survey
+, for survey,,
+ ,Spawning biomass per recruit given ,,
+,,,
+ ,Equilibrium recruitment,,
+ ,Catchability coefficient for survey,,dat.sim1$q
+,,,
+,,,
+Table 1. Continued.,,,
+Symbols,Description,Current Value,R output
+Stochastic deviation,,,
+  Process error,,,
+ ,Standard deviation of log recruitment,0.2,par.sim1$logR.sd
+ ,Recruitment deviates in year , ,par.sim1$logR.resid
+,,,
+ ,Standard deviation of log Fmult,0.2,
+ ,Fully selected fishing mortality deviates in year , ,
+,,,
+ Observation error,,,
+ ,CV of landings ,0.005,par.sim1$cv.L
+ ,Landings deviates in year, ,
+,,,
+ ,CV of survey,0.1,par.sim1$cv.survey
+ ,Survey abundance deviates in year, ,
+,,,
+a Currently assumed constant across years.,,,
+bInput CV of landings for estimation model: dat.input$cv.L. Input CV of survey for estimation model: dat.input$cv.survey.,,,
+,,,
