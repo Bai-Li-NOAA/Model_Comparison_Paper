@@ -9,7 +9,7 @@ This repository contains an age-strcutured operating model (OM) and its outputs.
 - OM folder
   - 160 OM outputs
 - AMAK, ASAP, BAM, SS folders
-  - 160 sets of inputs and outputs for each estimation model
+  - 160 sets of inputs and outputs from each estimation model
 - Read_Write_Inputs_Fun folder
   - Required functions to run final_sim100.R 
 
