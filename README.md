@@ -5,7 +5,7 @@
 This repository contains an age-strcutured operating model (OM) and its outputs. The OM is used to generate input data for estimation models (e.g. AMAK, ASAP, BAM, and SS). It allows comparison of the estimation model outputs with true dynamics simulated in the OM. 
 
 - Docs folder
-  - Simple Operating Model.docx (Table 1: description of OM R outputs)
+  - Simple Operating Model.pdf (Table 1: description of OM R outputs)
 - OM folder
   - 160 OM outputs
 - AMAK, ASAP, BAM, SS folders
