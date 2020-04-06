@@ -85,7 +85,7 @@ for(om_sim in 1:om_sim_num){
   om_abundance[,om_sim] <- sim1$abundance/1000
   om_ssb[,om_sim] <- sim1$SSB
   om_recruit[,om_sim] <- sim1$N.age[,1]/1000
-  om_Ftot[,om_sim] <- apply(sim1$FAA*par.sim1$selex, 1, max)
+  om_Ftot[,om_sim] <- apply(sim1$FAA, 1, max)
   om_Fmul[,om_sim] <- sim1$F
   om_landing[,om_sim] <- sim1$L.mt
   om_survey[,om_sim] <- survey.sim1
