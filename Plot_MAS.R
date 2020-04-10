@@ -1,7 +1,19 @@
 #### Check and install missing packages and library all packages ####
-list_of_packages <- c("rstudioapi", "gdata", "PBSadmb", "stringr", "matrixcalc", "r4ss", "ASAPplots", "future", "readxl", "scales", "corrplot", "future", "glue", "jsonlite")
+list_of_packages <- c("rstudioapi", "gdata", "PBSadmb", "PBSmodelling", "stringr", "matrixcalc", "r4ss", "ASAPplots", "future", "readxl", "scales", "corrplot", "future", "glue", "jsonlite")
 missing_packages <- list_of_packages[!(list_of_packages %in% installed.packages()[,"Package"])]
 if(length(missing_packages)) install.packages(missing_packages)
+if("ASAPplots" %in% missing_packages) devtools::install_github("cmlegault/ASAPplots", build_vignettes = TRUE)
+
+if(!("PBSmodelling" %in% installed.packages()[,"Package"])) {
+  packageurl = "https://cran.r-project.org/src/contrib/PBSmodelling_2.68.8.tar.gz"
+  install.packages(packageurl, repos=NULL, type="source")
+}
+
+if(!("PBSadmb" %in% installed.packages()[,"Package"])) {
+  packageurl = "https://cran.r-project.org/src/contrib/PBSadmb_1.1.4.tar.gz"
+  install.packages(packageurl, repos=NULL, type="source")
+}
+
 invisible(lapply(list_of_packages, library, character.only = TRUE))
 
 current_path <- getActiveDocumentContext()$path
@@ -134,7 +146,6 @@ if (T){
 }
 
 #### Plot functions ####
-library(scales)
 model_names = c("OM", "AMAK", "ASAP", "BAM", "MAS")
 figure_number <- 10
 if(om_sim_num <= figure_number) {
@@ -505,7 +516,7 @@ for (j in figure_id){
 }
 
 #### Correlation matrix ####
-library(corrplot)
+
 cor.mtest <- function(mat, ...) {
   mat <- as.matrix(mat)
   n <- ncol(mat)
