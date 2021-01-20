@@ -1,6 +1,6 @@
 # Model Comparison Paper
 
-This repository contains inputs and outputs from the model comparison paper: A comparison of four primary age-structured stock assessment models used in the United States. The code and examples of how to use the age-structured operating model and how to compare results from the estimation models (EM; e.g. AMAK, ASAP, BAM, and SS) can be found in this (repository)[https://github.com/Bai-Li-NOAA/Age_Structured_Stock_Assessment_Model_Comparison.git].  
+This repository contains inputs and outputs from the model comparison paper: A comparison of four primary age-structured stock assessment models used in the United States. The code and examples of how to use the age-structured operating model and how to compare results from the estimation models (EM; e.g. AMAK, ASAP, BAM, and SS) can be found in this [repository](https://github.com/Bai-Li-NOAA/Age_Structured_Stock_Assessment_Model_Comparison.git).  
 
 ## Structure of the repo
 
