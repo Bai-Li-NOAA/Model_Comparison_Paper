@@ -1,17 +1,17 @@
-# Stock-Assessment-Model-Comparison-Project
+# Model Comparison Paper
 
-This repository contains an age-strcutured operating model (OM) and its outputs. The OM is used to generate input data for estimation models (e.g. AMAK, ASAP, BAM, and SS). It allows comparison of the estimation model outputs with true dynamics simulated in the OM. 
+This repository contains inputs and outputs from the model comparison paper: A comparison of four primary age-structured stock assessment models used in the United States. The code and examples of how to use the age-structured operating model and how to compare results from the estimation models (EM; e.g. AMAK, ASAP, BAM, and SS) can be found in this (repository)[https://github.com/Bai-Li-NOAA/Age_Structured_Stock_Assessment_Model_Comparison.git].  
 
 ## Structure of the repo
 
-- Docs folder
-  - Simple Operating Model.pdf (Table 1: description of OM R outputs)
-- OM folder
-  - 160 OM outputs
-- AMAK, ASAP, BAM, SS folders
-  - 160 sets of inputs and outputs from each estimation model
-- Read_Write_Inputs_Fun folder
-  - Required functions to run final_sim100.R 
+- docs
+  - The Operating Model.pdf (Description of OM and its output)
+- om (OM output data from each case)
+- em 
+  - C0-C12 (Input files from the iteration 100) 
+  - em_input_raw (tpl files and other files)
+- comparison_output (synthesized output data)
+- code (protyping code from each case)
 
 ## Disclaimer
 
